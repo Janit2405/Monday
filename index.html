@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlowDay - Collaborative Work OS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="logo">FlowDay</div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#board">Boards</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#cta" class="cta">Get Started</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="cta">
+        <div class="hero-copy">
+          <h1>Plan, track, and ship your team’s best work.</h1>
+          <p>
+            FlowDay combines flexible work boards, automation, and actionable
+            insights to help your team stay aligned and deliver faster.
+          </p>
+          <form class="signup" id="signup-form">
+            <label for="email" class="sr-only">Work email</label>
+            <input id="email" type="email" placeholder="Enter your work email" required />
+            <button type="submit">Try it free</button>
+          </form>
+          <span class="note">No credit card required</span>
+        </div>
+        <div class="hero-art">
+          <div class="dashboard-card">
+            <div class="dashboard-header">
+              <span>Product Launch</span>
+              <span class="status">On Track</span>
+            </div>
+            <div class="dashboard-metric">
+              <span class="metric-value">87%</span>
+              <span class="metric-label">Milestones completed</span>
+            </div>
+            <ul class="dashboard-list">
+              <li>
+                <span class="avatar" aria-hidden="true">AB</span>
+                <span>Finalize messaging</span>
+                <span class="pill pill-green">Done</span>
+              </li>
+              <li>
+                <span class="avatar" aria-hidden="true">JS</span>
+                <span>QA testing</span>
+                <span class="pill pill-amber">In progress</span>
+              </li>
+              <li>
+                <span class="avatar" aria-hidden="true">MT</span>
+                <span>Launch checklist</span>
+                <span class="pill pill-blue">Upcoming</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-grid" id="features">
+        <article>
+          <h2>Build any workflow</h2>
+          <p>
+            Drag-and-drop boards, timelines, and dashboards to design a process
+            that matches the way your team works.
+          </p>
+        </article>
+        <article>
+          <h2>Automate busywork</h2>
+          <p>
+            Put repetitive updates on autopilot with powerful, no-code
+            automations that keep everyone aligned.
+          </p>
+        </article>
+        <article>
+          <h2>Collaborate in context</h2>
+          <p>
+            Keep conversations, files, and decisions tied to the work so nothing
+            gets lost in endless threads.
+          </p>
+        </article>
+      </section>
+
+      <section class="board" id="board">
+        <header>
+          <h2>Team roadmap board</h2>
+          <button id="add-item-btn">+ New Item</button>
+        </header>
+        <div class="board-columns">
+          <div class="column" data-status="backlog">
+            <h3>Backlog</h3>
+            <div class="column-items" id="backlog"></div>
+          </div>
+          <div class="column" data-status="progress">
+            <h3>In Progress</h3>
+            <div class="column-items" id="progress"></div>
+          </div>
+          <div class="column" data-status="done">
+            <h3>Done</h3>
+            <div class="column-items" id="done"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="insights">
+        <h2>Insights that keep your work on track</h2>
+        <div class="insight-cards">
+          <div class="insight-card">
+            <h3>Workload view</h3>
+            <p>Balance capacity and prevent burn-out with resource insights.</p>
+          </div>
+          <div class="insight-card">
+            <h3>Timeline view</h3>
+            <p>Understand dependencies and keep delivery dates aligned.</p>
+          </div>
+          <div class="insight-card">
+            <h3>Goals dashboard</h3>
+            <p>Connect every project to top-line business outcomes.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing" id="pricing">
+        <h2>Flexible plans for every team</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Starter</h3>
+            <p class="price">$10<span>/seat</span></p>
+            <ul>
+              <li>Unlimited boards</li>
+              <li>Basic dashboards</li>
+              <li>Email support</li>
+            </ul>
+            <button>Choose plan</button>
+          </div>
+          <div class="pricing-card highlight">
+            <h3>Growth</h3>
+            <p class="price">$16<span>/seat</span></p>
+            <ul>
+              <li>Timeline & Gantt</li>
+              <li>Automations</li>
+              <li>Advanced analytics</li>
+            </ul>
+            <button>Choose plan</button>
+          </div>
+          <div class="pricing-card">
+            <h3>Enterprise</h3>
+            <p class="price">Let's chat</p>
+            <ul>
+              <li>Security & compliance</li>
+              <li>Enterprise integrations</li>
+              <li>Dedicated success manager</li>
+            </ul>
+            <button>Contact sales</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Status</a>
+        <a href="#">Contact</a>
+      </div>
+      <p>&copy; <span id="year"></span> FlowDay Labs Inc.</p>
+    </footer>
+
+    <dialog id="new-item-modal">
+      <form method="dialog" id="new-item-form">
+        <h2>Create new item</h2>
+        <label>
+          Item name
+          <input type="text" name="title" required />
+        </label>
+        <label>
+          Owner
+          <input type="text" name="owner" placeholder="Initials" maxlength="2" />
+        </label>
+        <label>
+          Status
+          <select name="status">
+            <option value="backlog">Backlog</option>
+            <option value="progress">In Progress</option>
+            <option value="done">Done</option>
+          </select>
+        </label>
+        <menu>
+          <button value="cancel" class="secondary">Cancel</button>
+          <button value="confirm" class="primary">Create</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <template id="item-template">
+      <article class="board-item" draggable="true">
+        <span class="avatar" data-avatar></span>
+        <div class="item-content">
+          <h4 data-title></h4>
+          <span class="item-status" data-status-label></span>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
